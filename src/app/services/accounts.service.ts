@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { LoggingService } from './loging.service';
 
 // TO BE ABLE TO INJECT ANOTHER SERVICE WE MUST BE ABLE TO INJECT IT
@@ -18,6 +18,8 @@ export class AccountsService {
       status: 'unknown',
     },
   ];
+
+  statusUpdated = new EventEmitter<string>();
 
   constructor(private loggingService: LoggingService) {}
 
