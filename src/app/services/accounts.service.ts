@@ -2,7 +2,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { LoggingService } from './loging.service';
 
 // TO BE ABLE TO INJECT ANOTHER SERVICE WE MUST BE ABLE TO INJECT IT
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AccountsService {
   accounts = [
     {
