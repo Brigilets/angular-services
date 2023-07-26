@@ -6,7 +6,8 @@ import { AccountsService } from '../services/accounts.service';
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.css'],
-  providers: [LoggingService, AccountsService],
+  // added in app.module.ts
+  // providers: [LoggingService],
 })
 export class NewAccountComponent {
   // @Output() accountAdded = new EventEmitter<{ name: string; status: string }>();
@@ -23,7 +24,6 @@ export class NewAccountComponent {
     // });
     this.accountsService.addAccount(accountName, accountStatus);
 
-    this.loggingService.logStatusChange(accountStatus);
-    console.log('new account ' + accountName + ' created');
+    // this.loggingService.logStatusChange(accountStatus);
   }
 }
